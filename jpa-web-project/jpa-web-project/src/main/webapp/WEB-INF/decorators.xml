@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Cấu hình khai báo cho SiteMesh 3.
+
+    LƯU Ý: Trong project này, cấu hình decorator đang được thực hiện bằng
+    code trong vn.iotstar.config.SiteMeshFilter (kế thừa
+    ConfigurableSiteMeshFilter, override applyCustomConfiguration) - đây là
+    cách khuyến nghị của SiteMesh 3. File decorators.xml này được giữ lại
+    mang tính tài liệu / tham khảo, thể hiện đúng ý đồ cấu hình:
+      - Toàn bộ trang dùng layout main.jsp
+      - Trang login/register không dùng layout chung
+-->
+<decorators defaultdir="/views/layouts">
+    <decorator name="main" page="main.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+
+    <excludes>
+        <pattern>/login</pattern>
+        <pattern>/register</pattern>
+        <pattern>/resources/*</pattern>
+        <pattern>/uploads/*</pattern>
+    </excludes>
+</decorators>
